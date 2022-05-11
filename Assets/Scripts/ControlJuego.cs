@@ -56,7 +56,7 @@ public class ControlJuego : MonoBehaviour
         SceneManager.LoadScene("nivel0");
     }
 
-    bool pausa = false;
+    public static bool pausa = false;
     public Text Ipause;
     public void pause()
     {

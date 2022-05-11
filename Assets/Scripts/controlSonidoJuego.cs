@@ -6,7 +6,7 @@ public class controlSonidoJuego : MonoBehaviour
 {
     public AudioSource musicaInicio, musicaLoop;
     public static AudioSource cancion;
-    bool inicio=false   ;
+    bool inicio=false;
     void Start()
     {
         GameObject musicaMenu;
@@ -18,7 +18,7 @@ public class controlSonidoJuego : MonoBehaviour
     }
     private void Update()
     {
-        if (musicaInicio.isPlaying == false && inicio==false)
+        if (musicaInicio.isPlaying == false && inicio==false && ControlJuego.pausa == false)
         {
             musicaLoop.Play();
             cancion = musicaLoop;
