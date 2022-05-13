@@ -27,42 +27,6 @@ public class movimiento : MonoBehaviour
         Time.timeScale = 1;
         StartCoroutine("caida");
     }
-
-
-    // Update is called once per frame
-
-    /*private void Update()
-    {
-        if (Input.GetKeyDown("space") && secondJump == true && canJump == false)
-        {
-
-            rb2d.AddForce(Vector2.up * vely * 50);
-            secondJump = false;
-        }
-
-        if (Input.GetKeyDown("escape"))
-        {
-            if (pausa == true)
-            {
-                Time.timeScale = 1;
-                pausa = false;
-            }
-            else
-            {
-                Time.timeScale = 0;
-                pausa = true;
-
-            }
-        }
-
-        if (Input.GetKeyDown("space") && canJump == true)
-        {
-
-            rb2d.AddForce(Vector2.up * vely * 100);
-            canJump = false;
-        }
-
-    }*/
     void FixedUpdate()
     {
         position = transform.position;

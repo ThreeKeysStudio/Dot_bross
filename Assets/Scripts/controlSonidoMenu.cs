@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class controlSonidoMenu : MonoBehaviour
 {
     private controlSonidoMenu instace;
-    public AudioSource musicaMenuIntro,MusicaMenuLoop;
+    public AudioSource musicaMenuIntro,MusicaMenuLoop,mPress;
     bool inicio;
     public controlSonidoMenu Instance
     {
@@ -34,6 +34,11 @@ public class controlSonidoMenu : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
 
+    }
+
+    public void press()
+    {
+        mPress.Play();
     }
 
     private void Update()
