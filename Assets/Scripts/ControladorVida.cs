@@ -80,16 +80,26 @@ public class ControladorVida : MonoBehaviour
             vida = vida + i;
         }
     }
-
+    public AudioSource sonidoMuerte;
+    public Camera mainCamera;
     IEnumerator GameOver() {
+
+        mainCamera.cullingMask = (1 << LayerMask.NameToLayer("DEFAULT"));
         go.gameObject.SetActive(true);
         jugador.gameObject.SetActive(false);
         pausa.gameObject.SetActive(false);
         joy.gameObject.SetActive(false);
         izq.gameObject.SetActive(false);
         salto.gameObject.SetActive(false);
+        controlSonidoJuego.cancion.Stop();
+        
         yield return new WaitForSeconds(0.1f);
+        
+        sonidoMuerte.Play();
         Time.timeScale = 0;
+        
+
+
         //siguienteNivel();
         calcularDinero(controladorPuntuacion.p);
         setScore(controladorPuntuacion.p);

@@ -6,9 +6,7 @@ using UnityEngine.UI;
 
 public class ControlJuego : MonoBehaviour
 {
-    private void Start()
-    {
-    }
+
     public void menu(string level) {
         SceneManager.LoadScene(level);
 
@@ -47,6 +45,7 @@ public class ControlJuego : MonoBehaviour
         selControles.opciones = true;
         selControles.jug = false;
     }
+
     public void tienda()
     {
         SceneManager.LoadScene("tienda");
