@@ -10,7 +10,7 @@ public class tienda : MonoBehaviour
     {
         dineroT.text= "Dinero: " + PlayerPrefs.GetInt("money");
     }
-
+    
     public static bool comprar(int valor) {
         int din;
         din = PlayerPrefs.GetInt("money");

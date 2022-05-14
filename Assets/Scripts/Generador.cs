@@ -27,8 +27,6 @@ public class Generador : MonoBehaviour {
 			if (num <= 1) { 
 				
 			}
-			
-
 
 			aux = Instantiate(obj[num]);
 			aux.gameObject.SetActive(true);

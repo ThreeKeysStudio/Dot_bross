@@ -6,6 +6,10 @@ using UnityEngine.UI;
 
 public class ControlJuego : MonoBehaviour
 {
+    private void Start()
+    {
+        Application.targetFrameRate = 60;
+    }
 
     public void menu(string level) {
         SceneManager.LoadScene(level);

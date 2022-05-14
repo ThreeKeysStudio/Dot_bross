@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,6 +29,38 @@ public class selPersonaje : MonoBehaviour
             }
 
         }
+    }
+
+    public TMP_InputField codigoTxt;
+    string codigo;
+
+    public void setCodigo()
+    {
+        codigo = codigoTxt.text;
+
+        if (codigo == "insaid121315")
+        {
+            PlayerPrefs.SetInt("inside", 1);
+            go.GetComponent<Text>().text = "Comprado";
+            codigoTxt.text = "";
+        }
+        else
+        {
+            StartCoroutine("incorrecto");
+        }
+
+        
+    }
+
+    IEnumerator incorrecto()
+    {
+        codigoTxt.interactable= false;
+        codigoTxt.textComponent.color = Color.red;
+        codigoTxt.text = "Codigo incorrecto";
+        yield return new WaitForSeconds(2);
+        codigoTxt.text = "";
+        codigoTxt.textComponent.color = Color.black;
+        codigoTxt.interactable = true;
     }
     public void ipc(int i)
     {

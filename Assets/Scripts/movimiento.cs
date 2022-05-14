@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,7 +17,7 @@ public class movimiento : MonoBehaviour
     Vector2 posicionInicial;
     public Joystick joystick;
     public bool pausa;
-    bool bder=false, bizq=false;
+    bool bder=false, bizq=false; 
     // Start is called before the first frame update
     void Start()
     {
@@ -54,10 +55,17 @@ public class movimiento : MonoBehaviour
             gameObject.transform.Translate(direction2 * veljoy * Time.fixedDeltaTime);
         }
 
+        checkPolvoSalto();
     }
 
+    private void checkPolvoSalto()
+    {
+        
+    }
     IEnumerator caida()
     {
+        
+        
         float trans = 1.8f;
         position.x = posicionInicial.x;
         position.y = posicionInicial.y;
@@ -96,7 +104,6 @@ public class movimiento : MonoBehaviour
     public void setSkin()
     {
         int i= PlayerPrefs.GetInt("index");
-        Debug.Log("Index: " + i);
         sr.sprite = skinJug[i];
     }
 
