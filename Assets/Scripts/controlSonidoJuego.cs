@@ -12,17 +12,18 @@ public class controlSonidoJuego : MonoBehaviour
         GameObject musicaMenu;
         musicaMenu = GameObject.FindGameObjectWithTag("sonido_menu");
         Destroy(musicaMenu);
-        musicaInicio.Play();
+
         cancion = musicaInicio;
-       
+        cancion.Play();
     }
     private void Update()
     {
-        if (musicaInicio.isPlaying == false && inicio==false && ControlJuego.pausa == false)
+
+        if (cancion.isPlaying == false && ControlJuego.pausap == false)
         {
-            musicaLoop.Play();
+            
             cancion = musicaLoop;
-            inicio = true;
+            cancion.Play();
         }
     }
 }
