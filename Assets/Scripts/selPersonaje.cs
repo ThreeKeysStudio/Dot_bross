@@ -38,7 +38,7 @@ public class selPersonaje : MonoBehaviour
     {
         codigo = codigoTxt.text;
 
-        if (codigo == "insaid121315")
+        if (codigo == "1NS1D3H3LPC0D3")
         {
             PlayerPrefs.SetInt("inside", 1);
             go.GetComponent<Text>().text = "Comprado";
@@ -49,7 +49,16 @@ public class selPersonaje : MonoBehaviour
             StartCoroutine("incorrecto");
         }
 
-        
+        if (codigo == "L1N03ST4B4")
+        {
+            PlayerPrefs.SetInt("hmjts", 1);
+            go.GetComponent<Text>().text = "Comprado";
+            codigoTxt.text = "";
+        }
+        else
+        {
+            StartCoroutine("incorrecto");
+        }
     }
 
     IEnumerator incorrecto()
