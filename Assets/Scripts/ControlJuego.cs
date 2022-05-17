@@ -59,7 +59,8 @@ public class ControlJuego : MonoBehaviour
         SceneManager.LoadScene("nivel0");
     }
 
-    public static bool pausa = false;
+    public static bool pausap = false;
+    bool pausa = false;
     public Text Ipause;
     public void pause()
     {
@@ -69,7 +70,7 @@ public class ControlJuego : MonoBehaviour
             Time.timeScale = 1;
             controlSonidoJuego.cancion.Play();
             pausa = false;
-            
+            pausap = false;
         }
         else
         {
@@ -77,7 +78,9 @@ public class ControlJuego : MonoBehaviour
             Time.timeScale = 0;
             controlSonidoJuego.cancion.Pause();
             pausa = true;
-            
+            pausap = true;
+
+
         }
         
         
