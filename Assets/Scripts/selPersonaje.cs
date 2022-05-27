@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,8 +20,9 @@ public class selPersonaje : MonoBehaviour
             if (PlayerPrefs.GetInt(skins[i].name) == 1)
             {
                 go.GetComponent<Text>().text = "Comprado";
+                
             }
-
+            Debug.Log(skins[i].name + " "+PlayerPrefs.GetInt(skins[i].name));
             if (i == PlayerPrefs.GetInt("index"))
             {
                 go.GetComponent<Text>().color = Color.red;
@@ -33,7 +33,7 @@ public class selPersonaje : MonoBehaviour
 
     public TMP_InputField codigoTxt;
     string codigo;
-
+    public Text cod1, cod2;
     public void setCodigo()
     {
         codigo = codigoTxt.text;
@@ -41,7 +41,7 @@ public class selPersonaje : MonoBehaviour
         if (codigo == "1NS1D3H3LPC0D3")
         {
             PlayerPrefs.SetInt("inside", 1);
-            go.GetComponent<Text>().text = "Comprado";
+            cod1.text = "Comprado";
             codigoTxt.text = "";
         }
         else
@@ -52,7 +52,7 @@ public class selPersonaje : MonoBehaviour
         if (codigo == "L1N03ST4B4")
         {
             PlayerPrefs.SetInt("hmjts", 1);
-            go.GetComponent<Text>().text = "Comprado";
+            cod2.text = "Comprado";
             codigoTxt.text = "";
         }
         else

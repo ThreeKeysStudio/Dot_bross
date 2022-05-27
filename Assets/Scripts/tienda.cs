@@ -8,7 +8,7 @@ public class tienda : MonoBehaviour
     public Text dineroT;
     private void Update()
     {
-        dineroT.text= "Dinero: " + PlayerPrefs.GetInt("money");
+        dineroT.text= "Dot Coins: " + PlayerPrefs.GetInt("money");
     }
     
     public static bool comprar(int valor) {

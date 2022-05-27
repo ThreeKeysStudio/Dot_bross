@@ -8,10 +8,19 @@ public class ControlJuego : MonoBehaviour
 {
     private void Start()
     {
+        pausap = false;
         Application.targetFrameRate = 60;
         if(selControles.jug == true)
         {
             control[PlayerPrefs.GetInt("controles")].gameObject.SetActive(true);
+        }
+        if(PlayerPrefs.GetInt("first") == 0)
+        {
+
+            PlayerPrefs.SetInt("first", 1);
+            PlayerPrefs.SetInt("controles", 2);
+            PlayerPrefs.SetInt("index", 0);
+            PlayerPrefs.SetInt("red", 1);
         }
 
     }
