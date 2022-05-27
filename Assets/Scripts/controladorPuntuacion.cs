@@ -1,11 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class controladorPuntuacion : MonoBehaviour
 {
-    // Start is called before the first frame update
 
     public Text puntuacion;
     public static int p;
@@ -14,7 +11,6 @@ public class controladorPuntuacion : MonoBehaviour
         p = 0;
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         p += 1;

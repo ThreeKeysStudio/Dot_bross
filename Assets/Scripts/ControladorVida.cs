@@ -36,27 +36,12 @@ public class ControladorVida : MonoBehaviour
             vidaaux = vida;
             StartCoroutine("eliminarCorazon");
         }
-
-        /*if (vida > vidaaux) {
-            vidaaux = vida;
-            sumarCorazon();
-        }*/
-
         if (vida <= 0)
         {
             StartCoroutine("GameOver");
         }
 
     }
-
-    /*public void sumarCorazon()
-    {
-            
-            caux = (Image)lista[cont];
-            caux.enabled = enabled;
-            cont++;
-
-    }*/
 
     IEnumerator eliminarCorazon() {
             cont--;
@@ -97,10 +82,7 @@ public class ControladorVida : MonoBehaviour
         
         sonidoMuerte.Play();
         Time.timeScale = 0;
-        
 
-
-        //siguienteNivel();
         calcularDinero(controladorPuntuacion.p);
         setScore(controladorPuntuacion.p);
 
@@ -126,10 +108,7 @@ public class ControladorVida : MonoBehaviour
         PlayerPrefs.SetInt("sc3", sc2);
 
     }
-    public void siguienteNivel()
-    {
-        SceneManager.LoadScene("nivel1");
-    }
+    
     int dinero, dineroC;
     public void calcularDinero(int puntuacion)
     {

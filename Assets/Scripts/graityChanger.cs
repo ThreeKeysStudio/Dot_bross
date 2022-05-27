@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class graityChanger : MonoBehaviour
@@ -16,8 +15,6 @@ public class graityChanger : MonoBehaviour
     bool isDestroy;
     IEnumerator generar()
     {
-        //n = Random.Range(15, 25);
-        //yield return new WaitForSeconds(1f);
         aux = Instantiate(obj);
         aux.gameObject.SetActive(true);
         return null;
