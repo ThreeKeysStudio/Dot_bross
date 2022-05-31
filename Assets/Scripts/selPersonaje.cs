@@ -5,15 +5,20 @@ using UnityEngine.UI;
 
 public class selPersonaje : MonoBehaviour
 {
-    int comprado;
-    int valor;
-    string nombre;
-
-    GameObject go;
+    //Variables publicas
     public GameObject[] skins;
+    public TMP_InputField codigoTxt;
+    public Text cod1, cod2;
 
+    //variables
+    int comprado, valor;
+    string nombre, codigo;
+    GameObject go;
+
+    //Metodo que se ejecuta al iniciar la tienda
     private void Start()
     {
+        //El bucle comprueba una por una que skin esta comprada o no y cual es la que esta seleccionada por el jugador
         for (int i = 0; i < skins.Length; i++)
         {
             go = GameObject.Find(skins[i].name + "/Text");
@@ -22,7 +27,7 @@ public class selPersonaje : MonoBehaviour
                 go.GetComponent<Text>().text = "Comprado";
                 
             }
-            Debug.Log(skins[i].name + " "+PlayerPrefs.GetInt(skins[i].name));
+
             if (i == PlayerPrefs.GetInt("index"))
             {
                 go.GetComponent<Text>().color = Color.red;
@@ -30,10 +35,7 @@ public class selPersonaje : MonoBehaviour
 
         }
     }
-
-    public TMP_InputField codigoTxt;
-    string codigo;
-    public Text cod1, cod2;
+    //Metodo para las skins que necesitan codigo para ser desbloqueadas
     public void setCodigo()
     {
         codigo = codigoTxt.text;
@@ -60,7 +62,7 @@ public class selPersonaje : MonoBehaviour
             StartCoroutine("incorrecto");
         }
     }
-
+    //Coorutina usada para cuando un codigo es incorrecto
     IEnumerator incorrecto()
     {
         codigoTxt.interactable= false;
@@ -71,6 +73,8 @@ public class selPersonaje : MonoBehaviour
         codigoTxt.textComponent.color = Color.black;
         codigoTxt.interactable = true;
     }
+
+    //Metodo que comprueba si la skin seleccionada por el jugador esta comprada, y si no lo esta comprueba si tiene sufientes monedas.
     public void ipc(int i)
     {
         
@@ -96,14 +100,14 @@ public class selPersonaje : MonoBehaviour
             go = GameObject.Find(skins[ind].name + "/Text");
             go.GetComponent<Text>().color = Color.red;
         }
-        
-        
     } 
+
+    //metodo para asignar un nombre a las skins
     public void setNombre(string n)
     {
         this.nombre = n;
     }
-
+    //metodo para asignar un valor a las skins
     public void setValor(int v)
     {
         this.valor = v;

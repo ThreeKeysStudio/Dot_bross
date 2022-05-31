@@ -2,21 +2,11 @@ using UnityEngine;
 
 public class monedaC : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //Variables publicas
     public AudioSource quienEmite;
     public AudioClip sonido;
-    void Start()
-    {
-        
-        
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //Metodo que controla cuando el jugador ha entrado en contacto con la moneda
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
