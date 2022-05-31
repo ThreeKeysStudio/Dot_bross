@@ -4463,12 +4463,12 @@ MonoBehaviour:
   c1: {fileID: 1272260363}
   c2: {fileID: 1994886927}
   c3: {fileID: 674472659}
-  go: {fileID: 1751004705}
   jugador: {fileID: 299272856}
   salto: {fileID: 222807455}
   pausa: {fileID: 1498825205}
   izq: {fileID: 1082259364}
   joy: {fileID: 1478665376}
+  go: {fileID: 1751004705}
   sonidoMuerte: {fileID: 1015835158}
   mainCamera: {fileID: 703158827}
 --- !u!114 &1391457672
