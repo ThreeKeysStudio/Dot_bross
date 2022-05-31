@@ -1,23 +1,25 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class ControladorVida : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //Variables publicas
     public Image c1, c2, c3;
-    Image caux;
-    ArrayList  lista= new ArrayList();
-    public Text go;
     public GameObject jugador;
     public Button salto, pausa, izq;
     public Joystick joy;
-    static int vida;
-    int vidaaux;
+    public Text go;
+    public AudioSource sonidoMuerte;
+    public Camera mainCamera;
 
-    int cont = 3;
+    //Variables
+    Image caux;
+    ArrayList  lista= new ArrayList();
+    static int vida;
+    int dinero, dineroC, vidaaux, cont = 3;
+
+    //Metodo que se ejecuta al empezar el juego, añade al array las imagenes de los corazones y asigna cuanta vida tiene el jugador
     void Start()
     {
         lista.Add(c1);
@@ -27,11 +29,9 @@ public class ControladorVida : MonoBehaviour
         vidaaux = vida;
     }
 
-    // Update is called once per frame
+    //Metodo que ejecuta constantemente, controla que se eliminen los corazones cuando el jugador pierde vida y si no le queda vida empieze el game over
     void Update()
     {
-
-
         if (vida < vidaaux) {
             vidaaux = vida;
             StartCoroutine("eliminarCorazon");
@@ -43,6 +43,7 @@ public class ControladorVida : MonoBehaviour
 
     }
 
+    //Coorutina que se ejecuta cuando el jugador se cae y pierde vida, elimina el corazon del array
     IEnumerator eliminarCorazon() {
             cont--;
             caux = (Image)lista[cont];
@@ -58,6 +59,8 @@ public class ControladorVida : MonoBehaviour
 
     }
 
+
+    //Metodo que se encarga de controlar cuantas vidas tiene el jugador
     public static void controlarVida(int i) {
 
         if (vida != 0)
@@ -65,8 +68,8 @@ public class ControladorVida : MonoBehaviour
             vida = vida + i;
         }
     }
-    public AudioSource sonidoMuerte;
-    public Camera mainCamera;
+    
+    //Coorutina que se ejecuta cuando al jugador no le quedan vidan
     IEnumerator GameOver() {
 
         mainCamera.cullingMask = (1 << LayerMask.NameToLayer("DEFAULT"));
@@ -85,9 +88,9 @@ public class ControladorVida : MonoBehaviour
 
         calcularDinero(controladorPuntuacion.p);
         setScore(controladorPuntuacion.p);
-
-        
     }
+
+    //Metodo que coje la puntuacion que ha conseguido el jugador y la compara para sacar la mejor puntuacion del jugador y tambien se pone en el primer puesto de las tres ultimas
     public void setScore(int score)
     {
         int scoreaux;
@@ -106,10 +109,9 @@ public class ControladorVida : MonoBehaviour
         PlayerPrefs.SetInt("sc1", scoreaux);
         PlayerPrefs.SetInt("sc2", sc1);
         PlayerPrefs.SetInt("sc3", sc2);
-
     }
     
-    int dinero, dineroC;
+    //Metodo que calcula el dinero que consigue el jugador por cada partida. El dinero depende de la puntuacion que consiga el jugador
     public void calcularDinero(int puntuacion)
     {
         dineroC = (int)((puntuacion/100) * 1.5f);
