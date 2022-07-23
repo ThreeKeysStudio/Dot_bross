@@ -33,6 +33,10 @@ public class movimiento : MonoBehaviour
     //Metodo que se actualiza cada frame
     void FixedUpdate()
     {
+
+        if(Input.GetButtonDown("Jump")){
+            jump();
+        }
         //esta parte se encarga de recoger los datos de los inputs y la posicion del jugador
         position = transform.position;
         horizontal = Input.GetAxis("Horizontal");
@@ -113,6 +117,7 @@ public class movimiento : MonoBehaviour
     //metodo que se ejecuta al presionar el boton de salto
     public void jump()
     {
+        
         if (secondJump == true && canJump == false)
         {
             rb2d.velocity = new Vector2(0,0);

@@ -79,6 +79,7 @@ public class selPersonaje : MonoBehaviour
     {
         
         comprado = PlayerPrefs.GetInt(nombre);
+        Debug.Log(comprado);
         go = GameObject.Find(nombre + "/Text");
         if (comprado == 0)
         {

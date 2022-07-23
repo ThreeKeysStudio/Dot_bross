@@ -1068,7 +1068,7 @@ PrefabInstance:
       objectReference: {fileID: 909009959}
     - target: {fileID: 1045773317140419999, guid: b8628a51e69281a4397c28ce850001c6, type: 3}
       propertyPath: skinJug.Array.size
-      value: 14
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 1045773317140419999, guid: b8628a51e69281a4397c28ce850001c6, type: 3}
       propertyPath: skinJug.Array.data[0]
@@ -1126,6 +1126,22 @@ PrefabInstance:
       propertyPath: skinJug.Array.data[13]
       value: 
       objectReference: {fileID: 21300000, guid: dd3a647583cb389439cfcb3ef87b9bd9, type: 3}
+    - target: {fileID: 1045773317140419999, guid: b8628a51e69281a4397c28ce850001c6, type: 3}
+      propertyPath: skinJug.Array.data[14]
+      value: 
+      objectReference: {fileID: 21300000, guid: 627b7e7af295b744194ca1690b8ac353, type: 3}
+    - target: {fileID: 1045773317140419999, guid: b8628a51e69281a4397c28ce850001c6, type: 3}
+      propertyPath: skinJug.Array.data[15]
+      value: 
+      objectReference: {fileID: 21300000, guid: f9de2ad726779104eb3ec0ef1b4a830f, type: 3}
+    - target: {fileID: 1045773317140419999, guid: b8628a51e69281a4397c28ce850001c6, type: 3}
+      propertyPath: skinJug.Array.data[16]
+      value: 
+      objectReference: {fileID: 21300000, guid: f3c7abcfedaaeea43908f282e72c6198, type: 3}
+    - target: {fileID: 1045773317140419999, guid: b8628a51e69281a4397c28ce850001c6, type: 3}
+      propertyPath: skinJug.Array.data[17]
+      value: 
+      objectReference: {fileID: 21300000, guid: f56a94b5264144340abbf015d7c99d28, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8628a51e69281a4397c28ce850001c6, type: 3}
 --- !u!1 &272682677
@@ -3502,6 +3518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   btn: {fileID: 693204191}
   btn2: {fileID: 130154231}
+  btn3: {fileID: 0}
   izq: {fileID: 1082259364}
   Jjoy: {fileID: 1478665376}
   Jdjoy: {fileID: 1416873101}
@@ -4387,7 +4404,6 @@ GameObject:
   - component: {fileID: 1391457668}
   - component: {fileID: 1391457670}
   - component: {fileID: 1391457671}
-  - component: {fileID: 1391457672}
   m_Layer: 0
   m_Name: controlador
   m_TagString: Untagged
@@ -4471,20 +4487,6 @@ MonoBehaviour:
   go: {fileID: 1751004705}
   sonidoMuerte: {fileID: 1015835158}
   mainCamera: {fileID: 703158827}
---- !u!114 &1391457672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1391457667}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bd76de5b1fae8a44a769bfdea3ced2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fpsText: {fileID: 0}
-  deltaTime: 0
 --- !u!224 &1416873100 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8135886326569738822, guid: 56fae09712773584fb63896d473a98ee, type: 3}

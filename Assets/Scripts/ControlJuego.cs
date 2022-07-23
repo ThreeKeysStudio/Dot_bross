@@ -10,22 +10,34 @@ public class ControlJuego : MonoBehaviour
     public static bool pausap = false;
     public Text Ipause;
     public GameObject[] control;
-
     //Variables
     bool pausa = false;
 
     //Metodo que se ejecuta al incio del juego
     private void Start()
     {
+
+
         pausap = false;
 
+
+        
         //control de framerate (now= 60fps)
         Application.targetFrameRate = 60;
 
         //if que asigna el control seleccionado por el jugador
         if(selControles.jug == true)
         {
-            control[PlayerPrefs.GetInt("controles")].gameObject.SetActive(true);
+            if(PlayerPrefs.GetInt("controles") == 0)
+            {
+                control[0].gameObject.SetActive(false);
+            }
+            else
+            {
+                control[0].gameObject.SetActive(true);
+                control[PlayerPrefs.GetInt("controles")].gameObject.SetActive(true);
+            }
+            
         }
 
         //if que solo se ejecuta SOLO la primera vez que abres el juego
@@ -35,6 +47,14 @@ public class ControlJuego : MonoBehaviour
             PlayerPrefs.SetInt("controles", 2);
             PlayerPrefs.SetInt("index", 0);
             PlayerPrefs.SetInt("red", 1);
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            pause();
         }
     }
 
@@ -106,8 +126,12 @@ public class ControlJuego : MonoBehaviour
     {
         if (pausa == true)
         {
-            control[PlayerPrefs.GetInt("controles")].gameObject.SetActive(true);
-            control[0].gameObject.SetActive(true);
+            if(PlayerPrefs.GetInt("controles") != 0)
+            {
+                control[PlayerPrefs.GetInt("controles")].gameObject.SetActive(true);
+                control[0].gameObject.SetActive(true);
+            }
+                
             Ipause.gameObject.SetActive(false);
             Time.timeScale = 1;
             controlSonidoJuego.cancion.Play();

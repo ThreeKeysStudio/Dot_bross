@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class selControles : MonoBehaviour
 {
     //variables publicas
-    public Text btn, btn2;
+    public Text btn, btn2, btn3;
     public Button izq;
     public Joystick Jjoy;
     public DynamicJoystick Jdjoy;
@@ -15,19 +15,20 @@ public class selControles : MonoBehaviour
     public void Update()
     {
         int control= PlayerPrefs.GetInt("controles");
-        
 
         //flechas
         if (control == 1 && opciones == true)
         { 
             btn.color = Color.red;
             btn2.color = Color.white;
+            btn3.color = Color.white;
         }
         //Joystick
         if (control == 2 && opciones == true)
         {
             btn2.color = Color.red;
             btn.color = Color.white;
+            btn3.color = Color.white;
         }
         //Dinamic Joystick
         if (control == 3 && opciones == true)
@@ -35,7 +36,15 @@ public class selControles : MonoBehaviour
             
             btn2.color = Color.red;
             btn.color = Color.white;
+            btn3.color = Color.white;
             tg.isOn = true;
+        }
+        //Mando
+        if (control == 0 && opciones == true)
+        {
+            btn3.color = Color.red;
+            btn2.color = Color.white;
+            btn.color = Color.white;
         }
     }
     //Serie de metodos para asignar el control cuando se presiona un boton
@@ -51,6 +60,11 @@ public class selControles : MonoBehaviour
     public void djoy()
     {
         PlayerPrefs.SetInt("controles", 3);
+    }
+
+    public void mando()
+    {
+        PlayerPrefs.SetInt("controles", 0);
     }
     //Controlador del toggle de las opciones
     public void dinamic(Toggle tgValue)
