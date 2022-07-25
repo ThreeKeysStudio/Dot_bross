@@ -11,7 +11,7 @@ public class anuncios : MonoBehaviour
     //private string appID = "ca-app-pub-5129558101525248~3674812084"; ///Coloca tu ID de aplicacion aqui
 
     private RewardedAd rewardedAd;
-    private string RewardAD = "ca-app-pub-3940256099942544/5224354917"; ///Coloca tu ID de Anuncio Bonificado aqui
+    private string RewardAD = "ca-app-pub-5129558101525248/8229118853"; ///Coloca tu ID de Anuncio Bonificado aqui
 
 
     /// Para evitar que crashee

@@ -18,6 +18,7 @@ public class ControladorVida : MonoBehaviour
     ArrayList  lista= new ArrayList();
     static int vida;
     int dinero, dineroC, vidaaux, cont = 3;
+    ranking ranking = new ranking();
 
     //Metodo que se ejecuta al empezar el juego, añade al array las imagenes de los corazones y asigna cuanta vida tiene el jugador
     void Start()
@@ -99,6 +100,7 @@ public class ControladorVida : MonoBehaviour
         if(PlayerPrefs.GetInt("best") <= scoreaux)
         {
             PlayerPrefs.SetInt("best", scoreaux);
+            ranking.enviarPuntuacion(scoreaux);
         }
 
         int sc1, sc2;
@@ -109,6 +111,9 @@ public class ControladorVida : MonoBehaviour
         PlayerPrefs.SetInt("sc1", scoreaux);
         PlayerPrefs.SetInt("sc2", sc1);
         PlayerPrefs.SetInt("sc3", sc2);
+
+
+        
     }
     
     //Metodo que calcula el dinero que consigue el jugador por cada partida. El dinero depende de la puntuacion que consiga el jugador
