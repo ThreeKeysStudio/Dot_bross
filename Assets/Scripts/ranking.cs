@@ -19,12 +19,14 @@ public class ranking : MonoBehaviour
     }
     private void Start()
     {
-        PlayGamesPlatform.Activate();
+       
+        
         LogIn();
     }
 
     public void LogIn()
     {
+        PlayGamesPlatform.Activate();
         Social.localUser.Authenticate((bool success) =>
         {
             if (success)

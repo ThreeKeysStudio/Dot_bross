@@ -1068,7 +1068,7 @@ PrefabInstance:
       objectReference: {fileID: 909009959}
     - target: {fileID: 1045773317140419999, guid: b8628a51e69281a4397c28ce850001c6, type: 3}
       propertyPath: skinJug.Array.size
-      value: 18
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1045773317140419999, guid: b8628a51e69281a4397c28ce850001c6, type: 3}
       propertyPath: skinJug.Array.data[0]
@@ -1142,6 +1142,14 @@ PrefabInstance:
       propertyPath: skinJug.Array.data[17]
       value: 
       objectReference: {fileID: 21300000, guid: f56a94b5264144340abbf015d7c99d28, type: 3}
+    - target: {fileID: 1045773317140419999, guid: b8628a51e69281a4397c28ce850001c6, type: 3}
+      propertyPath: skinJug.Array.data[18]
+      value: 
+      objectReference: {fileID: 21300000, guid: dc04000f41b725045b160624d0b8b157, type: 3}
+    - target: {fileID: 1045773317140419999, guid: b8628a51e69281a4397c28ce850001c6, type: 3}
+      propertyPath: skinJug.Array.data[19]
+      value: 
+      objectReference: {fileID: 21300000, guid: 75e0f504a78dac24580304e5d45c9896, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8628a51e69281a4397c28ce850001c6, type: 3}
 --- !u!1 &272682677
